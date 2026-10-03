@@ -1,0 +1,16 @@
+{
+  "name": "axis",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start:electron": "electron .",
+    "dev:all": "concurrently \"npm run dev --prefix client\" \"npm run server --prefix server\"",
+    "install:all": "npm install && npm install --prefix client && npm install --prefix server"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "devDependencies": {
+    "electron": "^44.5.1"
+  }
+}
