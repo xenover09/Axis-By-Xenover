@@ -43,4 +43,4 @@ Axis is a Windows desktop software for creating cinematic motion-graphics videos
 **Note:** Please check the license terms for commercial use of Remotion at [remotion.dev/license](https://remotion.dev/license).
 
 ---
-&copy; 2026 Faheem ul Hassan. All rights reserved.
+&copy; 2026 Xenover !. All rights reserved.
