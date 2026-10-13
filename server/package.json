@@ -4,17 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "tsx watch src/index.ts"
+    "server": "tsx watch src/index.ts",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@esbuild/win32-x64": "^0.28.1",
     "@remotion/cli": "^4.0.532",
     "@remotion/renderer": "^4.0.532",
     "cors": "^2.8.6",
     "dotenv": "^18.0.5",
+    "esbuild": "^0.28.1",
     "express": "^5.2.1",
     "remotion": "^4.0.532"
   },

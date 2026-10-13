@@ -1,6 +1,5 @@
 import React from 'react';
 import { AbsoluteFill, useCurrentFrame, useVideoConfig, spring } from 'remotion';
-import { InterFont } from './fonts';
 
 export default function TitleReveal() {
   const frame = useCurrentFrame();
@@ -17,15 +16,7 @@ export default function TitleReveal() {
   const opacity = Math.min(1, frame / 30);
 
   return (
-    <AbsoluteFill style={{ backgroundColor: '#0a0a0a', justifyContent: 'center', alignItems: 'center' }}>
-      <style>{`
-        @font-face {
-          font-family: 'InterLocal';
-          src: url('${InterFont}') format('woff2');
-          font-weight: normal;
-          font-style: normal;
-        }
-      `}</style>
+    <AbsoluteFill style={{ backgroundColor: '#0a0a0a', justifyContent: 'center', alignItems: 'center', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
       
       {Array.from({ length: 50 }).map((_, i) => {
         const pFrame = (frame + i * 10) % 200;
@@ -48,7 +39,7 @@ export default function TitleReveal() {
       
       <h1
         style={{
-          fontFamily: "'InterLocal', sans-serif",
+          fontFamily: "'Inter', -apple-system, sans-serif",
           fontSize: 150,
           color: 'white',
           textShadow: '0 0 40px rgba(255, 255, 255, 0.8)',
@@ -61,7 +52,7 @@ export default function TitleReveal() {
       </h1>
       <h2
         style={{
-          fontFamily: "'InterLocal', sans-serif",
+          fontFamily: "'Inter', -apple-system, sans-serif",
           fontSize: 50,
           color: '#888',
           letterSpacing: '10px',

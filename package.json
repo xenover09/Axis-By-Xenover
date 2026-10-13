@@ -2,15 +2,56 @@
   "name": "axis",
   "version": "1.0.0",
   "main": "main.js",
+  "homepage": "https://github.com/xenover09/Axis-By-Xenover#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xenover09/Axis-By-Xenover"
+  },
   "scripts": {
     "start:electron": "electron .",
     "dev:all": "concurrently \"npm run dev --prefix client\" \"npm run server --prefix server\"",
-    "install:all": "npm install && npm install --prefix client && npm install --prefix server"
+    "install:all": "npm install && npm install --prefix client && npm install --prefix server",
+    "dist": "npm run build --prefix client && npm run build --prefix server && electron-builder"
   },
   "dependencies": {
     "concurrently": "^8.2.2"
   },
   "devDependencies": {
-    "electron": "^44.5.1"
+    "electron": "^44.5.1",
+    "electron-builder": "^26.15.3"
+  },
+  "build": {
+    "appId": "com.axis.app",
+    "productName": "Axis",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "package.json",
+      "client/dist/**/*",
+      "server/dist/**/*",
+      "server/render-template/**/*",
+      "templates/**/*",
+      "node_modules/**/*",
+      "client/node_modules/**/*",
+      "server/node_modules/**/*"
+    ],
+    "asarUnpack": [
+      "**/node_modules/@remotion/compositor-*/**/*",
+      "**/node_modules/@esbuild/**/*",
+      "**/node_modules/esbuild/**/*",
+      "server/render-template/**/*",
+      "templates/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "client/public/assets/axis-logo.png"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false
+    }
   }
 }
